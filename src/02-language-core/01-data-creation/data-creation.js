@@ -1,7 +1,7 @@
 var test = require('tape');
 var log = console.log;
 
-test('### Identifier Creation with Variable Declaration ###', function(t) {
+test('### Create Data with Variable Declaration ###', function(t) {
 
   log('########################################');
   t.pass('##### Definitions');
@@ -51,18 +51,70 @@ test('### Create Data With Functions Expression ###', function(t) {
   
 });
 
+
+test('### Create Data With Objects ###', function(t) {
+  
+  t.pass('Data could be created with Object Declaration');
+  t.pass('There are 4 ways to define Object');
+    
+  t.pass('Case 1: Objects can be defined with Literal notation')
+  
+  var obj = {
+    name: 'value',
+    getName: function () {
+      return this.name;
+    }
+  };
+  t.pass('This actualy is variable declaration where the value of the created identifier points to function')      
+  t.ok(obj, 'And more specifically the identifier point to the memory address where the object is stored.')
+  
+  t.equal(obj.name, 'value', 'JS creates identifier for each property of the object with name equal to property name')
+  t.equal(typeof obj.getName, 'function', 'JS creates identifier for each property even those that point to functions or nested objects')
+
+  t.pass('Case 2: Object.create(prototype) available from ES5')
+  
+  var newObj = Object.create(obj);
+  t.pass(newObj.name, 'value', 'The same identifiers are created as those defined in the object used as creation model');
+
+  t.pass('Case 3: Custom Constructor Functions')
+
+  function Person(inputName) {
+    t.equal(inputName, 'value', 'After function invocation JS creates identifier for each of its parameters');
+    this.name = inputName
+  }
+  t.equal(typeof Person, 'function', 'Initially JS creates identifier only for the function name');
+  var p = new Person('value');
+
+  t.equal(p.name, 'value', 'After function invocation completion JS creates identifier for each property of the created object');
+
+
+  t.pass('Case 4: Built-in Constructor Functions')  
+  
+  var bObj = new Object();
+  bObj.name = "value";
+  t.equal(bObj.name, 'value', 'JS creates identifier for each newly created property of the object');
+  
+  t.end();
+  
+});    
+
 test('### Practices ###', function(t) {
 
   t.pass('Prefer Function Declarations instead of Expressions');
   t.pass('Give the same name of the function expression with the name of variable associated with it');
+  t.pass('Prefer Object Literal notation for object creation');  
   
-  t.ok('TODO: Why these practices? Explain the cases bellow.')
+  t.pass('TODO: Why these practices? Explain the cases bellow.')
   
-  t.ok('TODO: The case with function name differing from variable name')  
-  t.ok('TODO: IE Function Expression name scope leakage')
-  t.ok('TODO: Debugging Aspect')  
-  t.ok('TODO: Firefox Function Statements')
-      
+  t.pass('TODO: The case with function name differing from variable name')  
+  t.pass('TODO: IE Function Expression name scope leakage')
+  t.pass('TODO: Debugging Aspect')  
+  t.pass('TODO: Firefox Function Statements')
+
+
+  t.pass('TODO: arguments identifier')  
+  t.pass('TODO: properties vs. variables')
+          
   t.end();
   
 });
