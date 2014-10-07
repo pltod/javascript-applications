@@ -6,7 +6,7 @@
     "tape": "*"
   },
   "scripts": {
-    "01": "node src/01-create-data-primitives.js"
+    "01": "node src/02-language-core/01-data-creation/data-creation.js"
   },
   "keywords": [
     "javascript"

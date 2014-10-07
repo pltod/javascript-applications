@@ -1,21 +1,6 @@
 var test = require('tape');
 
 test('### Create Data With Primitives ###', function(t) {
-
-  console.log('########################################');
-  t.pass('##### Definitions');
-  t.pass('Identifier: the name used to access data');
-  t.pass('Value: the actual data');
-  t.pass('Variable Declaration: var statement that introduce identifier and the initial value it points to');
-
-  t.pass('##### Identifier Creation with Variable');
-    
-  var v = 'v';
-  var v1;
-  t.ok(v, 'v identifier has been created');
-  t.equal(v, 'v', 'v identifier has been assigned initial value of "v"');
-  t.equal(v1, undefined, 'the default initial value is undefined');
-  
   
   t.pass('##### Primitive Types');
   t.pass('JS program can use 5 primitive data types which is not specified explicitely by the programmer (dynamic language)');
