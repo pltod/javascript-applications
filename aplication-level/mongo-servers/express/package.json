@@ -1,0 +1,15 @@
+{
+  "name": "express-mongo",
+  "version": "0.0.0",
+  "description": "Express with Mongo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "Plamen Todorov",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.9.8",
+    "mongodb": "^1.4.19"
+  }
+}

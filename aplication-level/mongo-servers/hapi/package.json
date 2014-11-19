@@ -1,0 +1,17 @@
+{
+  "name": "hapi-mongo",
+  "version": "0.0.0",
+  "description": "Hapi with Mongo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Plamen Todorov",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^7.1.0",
+    "hapi-mongodb": "^2.2.0",
+    "mongodb": "^1.4.19"
+  }
+}

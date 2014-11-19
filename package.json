@@ -11,8 +11,9 @@
   },
   "scripts": {
     "test-modules": "node application-level/nodejs-modules/test",    
-    "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation.js",
-    "test-generators":  "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators.js"
+    "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation",
+    "test-generators":  "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators",
+    "test-mongo":  "node --harmony application-level/mongo/test" 
   },
   "keywords": [
     "javascript"
