@@ -24,12 +24,13 @@ The major classification is as follows
 
 **TECHNICAL LEVEL**
 
-* learn about JavaScript programming model and Asynchrony programming model
+* learn about JavaScript programming model 
+
+* learn about Asynchrony programming model
+
+* learn about Execution environment model - JavaScript engines like V8
+
 
 **APPLICATION LEVEL**
 
 * learn about how to use modules, databases, application servers, frameworks, utility belts etc. - any application aspect you can think of
-
-**ENVIRONMENT LEVEL**
-
-* learn about JavaScript engines like V8
