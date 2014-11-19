@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "JavaScript Application / The Essential Parts",
   "devDependencies": {
-    "tape": "*"
+    "colortape": "0.0.4",
+    "tape": "^3.0.3"
   },
   "scripts": {
     "test-modules": "node application-level/nodejs-modules/test",    
