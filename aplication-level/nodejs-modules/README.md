@@ -52,7 +52,7 @@ See how to install/run/experiment with modules bellow.
 The output looks like:
 
 
-![](https://github.com/pltod/lab-npm/blob/master/images/test-suite-results.png)
+![](https://github.com/pltod/javascript-applications/tree/master/aplication-level/nodejs-modules/images/test-suite-results.png)
 
 
 ## How to Experiment
