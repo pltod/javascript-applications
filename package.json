@@ -1,19 +1,20 @@
 {
   "name": "js",
   "version": "0.0.1",
-  "description": "code, code, code ...",
+  "description": "JavaScript Application / The Essential Parts",
   "devDependencies": {
     "tape": "*"
   },
   "scripts": {
-    "01": "node src/02-language-core/01-data-creation/data-creation.js"
+    "test-modules": "node application-level/nodejs-modules/test",    
+    "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation.js"
   },
   "keywords": [
     "javascript"
   ],
   "repository" : { 
     "type" : "git", 
-    "url" : "https://github.com/pltod/lab-javascript.git"
+    "url" : "https://github.com/pltod/javascript-applications.git"
   },  
   "author": {
     "name": "Plamen Todorov",

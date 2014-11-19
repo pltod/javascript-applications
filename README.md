@@ -1,28 +1,6 @@
-http://arqex.com/939/learning-much-javascript-one-line-code
-
-# Project Info
-
-See the test suite...learn the language.
-
-Code, code, code ...
+JavaScript Applications / The Essential Parts
 
 
-# Table of Contents
-
-TODO
 
 
-## References
-
-Notes on references...
-
-
-* References - Comming...
-
-* This is not just a bunch of references. These references are:
-
-> only a few per aspect
-
-> curated...which means the list includes only the best or good enough to know the aspect
-
-> classified per aspect
+The parts we need to know for building JavaScript applications.
