@@ -1,7 +1,7 @@
 {
   "name": "js",
   "version": "0.0.1",
-  "description": "JavaScript Application / The Essential Parts",
+  "description": "JavaScript Application / necessities for building apps",
   "dependencies": {
     "mongodb": "^2.0.3"
   },
@@ -10,10 +10,10 @@
     "tape": "^3.0.3"
   },
   "scripts": {
-    "test-modules": "node application-level/nodejs-modules/test",    
-    "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation",
-    "test-generators":  "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators",
-    "test-mongo":  "node --harmony application-level/mongo/test" 
+    "test-modules": "node application-level/nodejs-modules/test | colortape",    
+    "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation | colortape",
+    "test-generators":  "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators | colortape",
+    "test-mongo":  "node --harmony application-level/mongo/test | colortape" 
   },
   "keywords": [
     "javascript"
