@@ -29,8 +29,8 @@ The major classification is as follows
 
 **APPLICATION LEVEL**
 
-* learn about how to use modules, datbases, application servers, frameworks, utility belts etc. - any application aspect you can think of
+* learn about how to use modules, databases, application servers, frameworks, utility belts etc. - any application aspect you can think of
 
 **ENVIRONMENT LEVEL**
 
-* learn about the engines that run the applications
+* learn about JavaScript engines like V8
