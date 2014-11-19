@@ -6,16 +6,15 @@
 
 * Run a test suite to learn a topic.
 
+**See package.json for available suites**
+
+
 > For example when running ```npm run test-modules``` you see this: 
 
 ![](https://github.com/pltod/javascript-applications/blob/master/images/test-modules.png)
 
 
-> See package.json for available suites
-
-
-
-* Additionally some of the subfolders are standalone small projects that elaborate on particular topic.
+* Additionaly for some topics we have self contained subprojects that require running a db or running a server to try different concepts. For these see appropriate README files in the subfolders.
 
 
 # Scaffolding

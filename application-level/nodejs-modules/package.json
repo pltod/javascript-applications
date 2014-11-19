@@ -7,7 +7,7 @@
     "tape": "^3.0.3"
   },
   "scripts": {
-    "test": "node ./test | colortape"
+    "test": "node . | colortape"
   },
   "keywords": [
     "node modules"
