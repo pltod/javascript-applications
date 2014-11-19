@@ -1,0 +1,23 @@
+{
+  "name": "db-utils",
+  "version": "0.0.1",
+  "description": "utilities for mongodb dev",
+  "dependencies": {
+    "mongodb": "^2.0.3"
+  },
+  "devDependencies": {
+    "colortape": "0.0.4",
+    "tape": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node --harmony index.js",
+    "test": "node --harmony test.js | colortape"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "author": {
+    "name": "pltod"
+  },
+  "license": "MIT"
+}
