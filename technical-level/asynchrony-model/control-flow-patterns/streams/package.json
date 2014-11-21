@@ -8,10 +8,14 @@
     "tape": "^3.0.3"
   },
   "scripts": {
-    "test": "DEBUG=* node readable | colortape"
+    "test-readable": "DEBUG=* node readable | colortape",
+    "test-writable": "DEBUG=* node writable | colortape"
   },
   "author": {
     "name": "@pltod"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "readable-stream": "^1.0.33"
+  }
 }

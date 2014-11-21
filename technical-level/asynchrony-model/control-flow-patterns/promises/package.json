@@ -1,0 +1,17 @@
+{
+  "name": "promises",
+  "version": "0.0.0",
+  "description": "playing with promises",
+  "devDependencies": {
+    "colortape": "0.0.4",
+    "debug": "^2.1.0",
+    "tape": "^3.0.3"
+  },
+  "scripts": {
+    "test": "DEBUG=* node --harmony . | colortape"
+  },
+  "author": {
+    "name": "@pltod"
+  },
+  "license": "MIT"
+}

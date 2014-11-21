@@ -1,4 +1,4 @@
-var debug = require('debug')('stream-test');
+var debug = require('debug')('test-readable');
 var test = require('tape');
 var fs = require('fs');
 
@@ -76,7 +76,7 @@ test('### setEncoding ###', function(t) {
 });
 
 test('### Error Event ###', function(t) {
-  var rs = fs.createReadStream('file1.txt');  
+  var rs = fs.createReadStream('fileMissing.txt');  
   rs.on('error', function(chunk) {
     debug('capture "error" event');    
     t.pass('"error" event emitted if there was an error receiving data.');
@@ -103,8 +103,13 @@ test('### Go To Flowing Mode With Resume ###', function(t) {
   var rs = fs.createReadStream('file.txt');
   rs.resume();
   rs.on('end', function () {
-    t.pass('The stream went to Flowing Mode with resume but we did not read anything')
-    t.end();
+    t.pass('The stream went to Flowing Mode with resume that is why we reach end without reading anything')
+    t.end()
   }) 
-  
 });
+
+// pause - pausing the flowing stream; in non-flowing mode just swith the flowing mode but paused
+// resume - resuming paused stream; in non-flowing mode just swith the flowing mode
+// pipe - automatically moving data from one stream to another dealing with all backpressure and stuff
+// unshift - unconsuming data
+// wrap - for working with old streams
