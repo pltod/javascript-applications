@@ -17,8 +17,11 @@ function SArray(cb) {
   Writable.call(this, {decodeStrings: false});
   debug(this);
   
-  debug('We handle finish event because this is the point when the stream has ended writing - we have all data')
+  debug('Attach handler to finish event because this is the point when the stream has ended writing - we have all data')
   if (cb) this.on('finish', function () { cb(this.getBody()) })
+    
+  // the state is changing with invoking write method of the stream
+  // passing data externally  
   this.body = []
 }
 

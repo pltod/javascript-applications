@@ -15,11 +15,11 @@ test('### Write into Writable Array Stream ###', function(t) {
   })
   var rs = fs.createReadStream('file1.txt');
   rs.setEncoding('utf8') 
+  debug("result from write could be false which means a backpressure - no possible to handle more data");
   rs.on('readable', function() {
     var res;
     while (null !== (chunk = rs.read(2))) {
       res = write.write(chunk.toString());
-      debug("result from write could be false which means a backpressure - no possible to handle more data");
     }
   });
   rs.on('end', function() {

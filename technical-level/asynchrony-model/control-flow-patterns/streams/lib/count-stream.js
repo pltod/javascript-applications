@@ -11,6 +11,7 @@ function Counter(opt) {
   Readable.call(this, opt);
   
   // the state
+  // here this is predefined state
   this._max = 100;
   this._index = 1;
   
