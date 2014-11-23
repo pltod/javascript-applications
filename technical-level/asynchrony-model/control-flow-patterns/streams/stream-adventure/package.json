@@ -1,0 +1,23 @@
+{
+  "name": "stream-test",
+  "version": "0.0.1",
+  "description": "taking stream adventure course",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "split": "^0.3.0",
+    "through": "*",
+    "request": "*",
+    "concat-stream": "*",
+    "duplexer": "*",
+    "trumpet": "*",
+    "websocket-stream": "*"
+  },
+  "keywords": [
+    "streams",
+    "tests"
+  ],
+  "author": "pltod",
+  "license": "MIT"
+}
