@@ -1,3 +1,5 @@
+// Stream Sink - accepts data and store it in array
+
 var debug = require('debug')('stream-array');
 var Writable = require('stream').Writable;
 var util = require('util');
