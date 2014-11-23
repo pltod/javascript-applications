@@ -3,25 +3,29 @@
   "version": "0.0.1",
   "description": "JavaScript Application / necessities for building apps",
   "dependencies": {
-    "mongodb": "^2.0.3"
+    "debug": "^2.1.0",
+    "mongodb": "^2.0.3",
+    "readable-stream": "^1.0.33"
   },
   "devDependencies": {
     "colortape": "0.0.4",
     "tape": "^3.0.3"
   },
   "scripts": {
-    "test-modules": "node application-level/nodejs-modules/test | colortape",    
+    "test-modules": "node application-level/nodejs-modules/test | colortape",
     "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation | colortape",
-    "test-generators":  "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators | colortape",
-    "test-mongo":  "node --harmony application-level/mongo/test | colortape" 
+    "test-generators": "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators | colortape",
+    "test-mongo": "node --harmony application-level/mongo/test | colortape",
+    "test-lazy-func-def": "DEBUG=* node technical-level/programming-model/patterns/lazy-function-definition | colortape",
+    "test-revealing-const": "DEBUG=* node technical-level/programming-model/patterns/revealing-constructor-pattern | colortape"    
   },
   "keywords": [
     "javascript"
   ],
-  "repository" : { 
-    "type" : "git", 
-    "url" : "https://github.com/pltod/javascript-applications.git"
-  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pltod/javascript-applications.git"
+  },
   "author": {
     "name": "Plamen Todorov",
     "email": "pl.todorov@gmail.com",
