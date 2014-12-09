@@ -3,8 +3,9 @@
 
 # How it Works
 
+This project can be used in two ways:
 
-* Run a test suite to learn a topic.
+* 1. Run a test suite to learn a topic.
 
 **See package.json for available suites**
 
@@ -14,7 +15,7 @@
 ![](https://github.com/pltod/javascript-applications/blob/master/images/test-modules.png)
 
 
-* Additionaly for some topics we have self contained subprojects that require running a db or running a server to try different concepts. For these see appropriate README files in the subfolders.
+* 2. Additionaly for some topics there are self-contained subprojects that require running a db or running a server to try different concepts. For these see appropriate README files in the subfolders of application-level folder.
 
 
 # Scaffolding
@@ -24,13 +25,22 @@ The major classification is as follows
 
 **TECHNICAL LEVEL**
 
-* learn about JavaScript programming model 
+In technical-level folder:
 
-* learn about Asynchrony programming model
+* code related with JavaScript programming model 
 
-* learn about Execution environment model - JavaScript engines like V8
+* code related with Asynchrony programming model
+
+* code related with Execution environment model - JavaScript engines like V8
 
 
 **APPLICATION LEVEL**
 
-* learn about how to use modules, databases, application servers, frameworks, utility belts etc. - any application aspect you can think of
+In application-level folder:
+
+* code related with how to use modules, databases, application servers, frameworks, utility belts, integration between layers etc. - any application aspect one can think of
+
+
+**SHARED COMPONENTS**
+
+In shared folder. Code that is reused across other apps in this repo.

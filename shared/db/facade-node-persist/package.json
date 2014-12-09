@@ -1,0 +1,23 @@
+{
+  "name": "db",
+  "version": "0.0.0",
+  "description": "db api - facade to node-persist",
+  "main": "db.js",
+  "scripts": {
+    "test": "node test.js | colortape",
+    "test-dev": "DEBUG=* node test.js | colortape"
+  },
+  "author": "Plamen Todorov",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.8.3",
+    "node-persist": "0.0.2",
+    "node-uuid": "^1.4.1",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "colortape": "0.0.4",
+    "debug": "^2.0.0",
+    "tape": "^3.0.0"
+  }
+}

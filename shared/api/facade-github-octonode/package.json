@@ -1,0 +1,16 @@
+{
+  "name": "facade-github",
+  "version": "0.0.0",
+  "description": "Github API Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plamen Todorov",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.1.0",
+    "octonode": "^0.6.9",
+    "underscore": "^1.7.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "firebase api",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plamen Todorov",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.1.0"
+  }
+}

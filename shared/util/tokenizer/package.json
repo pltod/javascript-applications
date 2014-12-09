@@ -1,0 +1,16 @@
+{
+  "name": "tokenizer",
+  "version": "0.0.0",
+  "description": "String/Array Utils",
+  "main": "tokenizer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plamen Todorov",
+  "license": "MIT",
+  "dependencies": {
+    "natural": "^0.1.28",
+    "lodash": "^2.4.1",
+    "levenshtein": "^1.0.5"
+  }
+}
