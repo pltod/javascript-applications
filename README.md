@@ -5,7 +5,9 @@
 
 This project can be used in two ways:
 
-1. Run a test suite to learn a topic.
+## 1
+
+Run a test suite to learn a topic.
 
 **See package.json for available suites**
 
@@ -15,7 +17,9 @@ This project can be used in two ways:
 ![](https://github.com/pltod/javascript-applications/blob/master/images/test-modules.png)
 
 
-2. Additionaly for some topics there are self-contained subprojects that require running a db or running a server to try different concepts. For these see appropriate README files in the subfolders of application-level folder.
+## 2
+
+Additionaly for some topics there are self-contained subprojects that require running a db or running a server to try different concepts. For these see appropriate README files in the subfolders of application-level folder.
 
 
 # Scaffolding
