@@ -54,7 +54,7 @@ test('### Generators ###', function(t) {
   logSection("Generator that yield in the middle and recieve data from the caller");
   function *genYieldInTheMiddleAndGetsData() {
 		var res = yield 1;
-		t.equal(res, 1, 'data has been passed from the caller');
+		t.equal(res, 2, 'data has been passed from the caller');
 		return res + 1;
   }
   currentGen = genYieldInTheMiddleAndGetsData();
@@ -62,8 +62,8 @@ test('### Generators ###', function(t) {
   t.equal(currentVal.value, 1, 'the result of generator invocation is object with "value" property');
   t.notOk(currentVal.done, 'the result of generator invocation is object with "done" property which is false if generator function has NOT exited yet');
   
-  currentVal = currentGen.next(1);
-  t.equal(currentVal.value, 2, 'when resuming invocation the generator takes into account what has been past to next');
+  currentVal = currentGen.next(2);
+  t.equal(currentVal.value, 3, 'when resuming invocation the generator takes into account what has been past to next');
   t.ok(currentVal.done, 'execution completes as expected - on the second next() call since we have one yield');
 
   logSection("Generator is like iterator and preserves the state of local variables across invocations");
