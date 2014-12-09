@@ -1,0 +1,44 @@
+{
+  "name": "lab-fullstack-koa",
+  "version": "0.0.1",
+  "description": "fullstack app with koa",
+  "dependencies": {
+    "JSONStream": "^0.9.0",
+    "co": "3.0.6",
+    "koa": "0.8.1",
+    "koa-compress": "1.0.7",
+    "koa-favicon": "1.1.0",
+    "koa-logger": "1.2.2",
+    "koa-mount": "1.3.0",
+    "koa-route": "1.1.4",
+    "koa-static": "1.4.5",
+    "mongodb": "1.4.7",
+    "mongojs": "^0.14.2",
+    "normalize.css": "3.0.1",
+    "superagent": "0.18.2",
+    "thunkify": "2.1.1"
+  },
+  "devDependencies": {
+    "browser-sync": "0.9.1",
+    "builder-autoprefixer": "1.0.2",
+    "component-builder": "1.1.9",
+    "component-koa": "1.0.0",
+    "component-resolver": "1.1.7",
+    "nodemon": "^1.2.1",
+    "ripplejs": "0.4.0",
+    "supertest": "0.12.1",
+    "tape": "2.13.4"
+  },
+  "scripts": {
+    "dev": "nodemon play.js",
+    "dev-verbose": "DEBUG=koa* nodemon play.js",
+    "start": "NODE_ENV=production node --harmony play.js"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": {
+    "name": "@pltod",
+    "url": "http://pltod.github.com"
+  }
+}

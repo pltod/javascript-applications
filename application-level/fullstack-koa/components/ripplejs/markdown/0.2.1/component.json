@@ -1,0 +1,23 @@
+{
+  "name": "markdown",
+  "repo": "",
+  "description": "Markdown directive that uses Marked",
+  "version": "0.2.1",
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "dependencies": {
+    "chjj/marked": "*"
+  },
+  "development": {
+    "dependencies": {
+      "component/assert": "*",
+      "ripplejs/ripple": "*",
+      "wilsonpage/fastdom": "v0.8.4"
+    }
+  },
+  "scripts": [
+    "lib/index.js"
+  ],
+  "repository": "ripplejs/markdown"
+}

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "ripplejs/ripple": "*",
+    "ripplejs/events": "*",
+    "components/font-awesome": "*"
+  },
+  "locals": ["api"],  
+  "scripts": ["index.js"],  
+  "styles": ["index.css"],
+  "templates": ["index.html"]  
+}

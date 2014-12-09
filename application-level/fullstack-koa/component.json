@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "private": true,
+  "paths": [
+    "app/client"
+  ],
+  "locals": [
+    "boot"
+  ],
+  "dependencies": {
+    "visionmedia/superagent": "~0.18.0",
+    "ripplejs/dispatch": "~0.1.0",
+    "components/font-awesome": "^4.0.3",
+    "ripplejs/markdown": "~0.2.1",
+    "ripplejs/ripple": "~0.5.2"
+  }
+}

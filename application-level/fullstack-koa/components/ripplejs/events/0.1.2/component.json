@@ -1,0 +1,20 @@
+{
+  "name": "events",
+  "description": "Allows nodes to emit events",
+  "version": "0.1.2",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "dependencies": {
+      "component/assert": "*",
+      "ripplejs/ripple": "0.2.0",
+      "ianstormtaylor/trigger-event": "*",
+      "wilsonpage/fastdom": "v0.8.4"
+    }
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ],
+  "repository": "ripplejs/events"
+}

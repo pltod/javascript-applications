@@ -1,0 +1,16 @@
+{
+  "name": "array-observer",
+  "version": "0.3.0",
+  "dependencies": {
+    "component/emitter": "*"
+  },
+  "development": {
+    "dependencies": {
+      "component/assert": "*"
+    }
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "repository": "ripplejs/array-observer"
+}

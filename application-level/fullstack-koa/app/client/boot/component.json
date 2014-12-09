@@ -1,0 +1,12 @@
+{
+  "locals": [
+    "reset",
+    "layout",
+    "logo",
+    "nav",
+    "api",
+    "em"
+  ],
+  "scripts": ["index.js"],
+  "styles": ["index.css"]
+}

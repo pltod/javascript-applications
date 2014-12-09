@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ripplejs/ripple": "*"
+  },
+  "scripts": ["index.js"],  
+  "styles": ["index.css"],
+  "templates": ["index.html"]
+}

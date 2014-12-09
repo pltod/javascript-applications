@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "visionmedia/superagent": "*"
+  },
+  "scripts": ["index.js"]
+}

@@ -1,0 +1,11 @@
+{
+  "restartable": "rs",
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "ignore": [".git", "node_modules/**", "build/**", "docs/**", "workflow_util/**", "components/**", "bower_components/**", "app/client/**"],
+  "watch": ["*.*"],
+  "stdin": true,
+  "verbose": false,
+  "stdout": true
+}

@@ -1,0 +1,20 @@
+{
+  "name": "each",
+  "version": "0.4.1",
+  "dependencies": {
+    "ripplejs/array-observer": "0.3.0"
+  },
+  "development": {
+    "dependencies": {
+      "component/assert": "*",
+      "ripplejs/events": "*",
+      "ripplejs/refs": "*",
+      "ripplejs/ripple": "0.4.0",
+      "wilsonpage/fastdom": "v0.8.4"
+    }
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "repository": "ripplejs/each"
+}

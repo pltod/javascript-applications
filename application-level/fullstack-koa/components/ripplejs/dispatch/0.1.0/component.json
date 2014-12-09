@@ -1,0 +1,19 @@
+{
+  "name": "dispatch",
+  "description": "Plugin for ripplejs/view for communicating with custom DOM events",
+  "version": "0.1.0",
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "dependencies": {},
+  "development": {
+    "dependencies": {
+      "component/assert": "*",
+      "ripplejs/view": "*"
+    }
+  },
+  "scripts": [
+    "lib/index.js"
+  ],
+  "repository": "ripplejs/dispatch"
+}
