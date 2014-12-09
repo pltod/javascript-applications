@@ -2,7 +2,7 @@ var test = require('tape');
 var config = require('./config.json');
 var mongo = require('mongodb');
 var url = 'mongodb://' + config.server + ":" + config.port + "/" + config.defaultDatabase;
-var run = require('./gen-runner');
+var run = require('../../shared/control-flow/async-loop');
 var dbUtils = require('./db-utils');
 
 test('Connect - Insert - Close flow with Callbacks', function(t) {

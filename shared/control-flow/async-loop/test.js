@@ -1,4 +1,4 @@
-var run = require('./async-loop');
+var run = require('./index');
 var fs = require('fs');
 var path = require('path');
 
@@ -8,10 +8,10 @@ run(function *() {
   
   // So in this way in use cases where we need to wait for the result of the execution of async code to make it more painless comparing to the way we do it with callbacks
   console.log(__dirname);
-  var generatorsFileContent = yield readFile(path.resolve(__dirname, 'generators.js'));
+  var generatorsFileContent = yield readFile(path.resolve(__dirname, 'index.js'));
   console.log(generatorsFileContent.toString());
 
-  var asyncLoopFileContent = yield readFile(path.resolve(__dirname, 'async-loop.js'));
+  var asyncLoopFileContent = yield readFile(path.resolve(__dirname, 'test.js'));
   console.log(asyncLoopFileContent.toString());
 });
 
