@@ -1,0 +1,34 @@
+{
+  "name": "todomvc-flux",
+  "version": "0.0.1",
+  "description": "Example Flux architecture.",
+  "main": "js/app.js",
+  "dependencies": {
+    "bluebird": "^2.2.2",
+    "express": "^4.6.1",
+    "fluxy": "jmreidy/fluxy",
+    "node-jsx": "^0.11.0",
+    "react": "^0.11.0",
+    "st": "^0.5.1"
+  },
+  "devDependencies": {
+    "browserify": "~2.36.0",
+    "envify": "~1.2.0",
+    "reactify": "~0.4.0",
+    "statics": "~0.1.0",
+    "uglify-js": "~2.4.13",
+    "watchify": "~0.4.1"
+  },
+  "scripts": {
+    "build": "STATIC_ROOT=./static NODE_ENV=production browserify -o static/js/bundle.js -e ./app/client/index.js",
+    "server": "npm run-script build && node ./app/server"
+  },
+  "author": "Justin Reidy",
+  "license": "Apache 2",
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  }
+}
