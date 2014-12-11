@@ -1,1 +1,1 @@
-* Essentials about nodejs modules
+* ```npm i``` then ```npm test``` to read essentials about nodejs modules in your console
