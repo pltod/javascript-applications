@@ -1,16 +1,15 @@
+var debug = require('debug')('language-defined-identifiers');
 var test = require('tape');
-var log = console.log;
 
 test('### Language Defined Identifiers ###', function(t) {
-  
-  log('########################################');
-  t.pass('##### All built-in language functions are kind of accessed via their corresponding predefined identifiers');
-  t.pass('For example: ');
-  t.ok(Object, '"Object" identifier is used to access built-in constructor function object');
 
-  t.pass('Of particular interest are:')
-  t.ok(this, "'this' built-in identifier that holds the current context")
-  t.ok(arguments, "'arguments' built in identifier")
+  t.pass('All built-in language functions are kind of accessed via their corresponding predefined identifiers');
+  t.pass('For example: ');
+  t.ok(Object, '"Object" identifier is used to access built-in constructor function');
+
+  t.pass('Of particular interest are:');
+  t.ok(this, "'this' built-in identifier that holds the current context");
+  t.ok(arguments, "'arguments' built in identifier that holds the arguments values with which the function has been called");
 
   t.end();
 
@@ -19,107 +18,54 @@ test('### Language Defined Identifiers ###', function(t) {
 
 test('### arguments ###', function(t) {
 
+  one(10, 20);
+  two(10, 20);
+  twoStrictMode(10, 20);
+
+
   function one(x, y, z) {
-    t.ok(arguments, "arguments holds the parameters of function invocation");
+    t.ok(arguments instanceof Object, 'arguments is an object that holds the values passed on function invocation');
+    t.notOk(arguments.prototype, 'arguments has no prototype')    
+    t.equal(2, arguments.length, 'arguments has length property that holds the number of parameters that has been passed');
 
-    t.ok(one, "identifier for the enclosing function is also accessible in the scope of the function")
-    t.equal(3, one.length, "dsds");
-
-    // the number of the passed arguments (only x, y)
-    assert.equal(2, arguments.length);
+    t.ok(one, "identifier that denotes enclosing function is also accessible in the scope of the function")
+    t.equal(3, one.length, "its length property denote the number of the function parameters");
   }
 
-    one(10, 20);
 
-    function two(x, y, z) {
-
-
-      assert.equal(10, x);
-      assert.equal(10, arguments[0]);
-
-      assert.equal(20, y);
-      assert.equal(20, arguments[1]);
-
-      assert.isUndefined(z);
-      assert.isUndefined(arguments[2]);
-
-      assert.equal(x, arguments[0]);
-      assert.equal(y, arguments[1]);
-      assert.equal(z, arguments[2]);
-
-      // formal parameter and arguments point to the same physical data
-      // that is why when we change arguments[0] we also change 'x' value
-      arguments[0] = 20;
-      assert.equal(20, arguments[0]);
-      assert.equal(20, x);
-
-      // however this sharing is not valid for formal parameters that are not passed on function execution
-      z = 40;
-      assert.equal(40, z);
-
-      arguments[2] = 50;
-      assert.equal(50, arguments[2]);
-      assert.equal(40, z);
-    }
-
-    two(10, 20);
-
-    function twoStrictMode(x, y, z) {
-
-      "use strict";
-
-      assert.equal(10, x);
-      assert.equal(10, arguments[0]);
-
-      assert.equal(20, y);
-      assert.equal(20, arguments[1]);
-
-      assert.isUndefined(z);
-      assert.isUndefined(arguments[2]);
-
-
-      assert.equal(x, arguments[0]);
-      assert.equal(y, arguments[1]);
-      assert.equal(z, arguments[2]);
-
-      // formal parameter and arguments do not point to the same physical data in strict mode
-      // that is why when we change arguments[0] we do not change 'x' value
-      arguments[0] = 20;
-      assert.equal(20, arguments[0]);
-      assert.equal(10, x);
-    }
-
-    twoStrictMode(10, 20);
-
-    // the same demonstration with passing objects
-
-    function three(obj1, obj2) {
-      var obj3 = {};
-      assert.strictEqual(arguments[0], obj1);
-      assert.strictEqual(arguments[1], obj2);
-
-      arguments[0] = obj3;
-
-      //again arguments and formal parameters share memory space when we are not in strict mode
-      assert.strictEqual(arguments[0], obj1);
-    }
-
-    three({}, {});
-
-    function threeStrictMode(obj1, obj2) {
-      "use strict";
-      var obj3 = {};
-      assert.strictEqual(arguments[0], obj1);
-      assert.strictEqual(arguments[1], obj2);
-
-      arguments[0] = obj3;
-
-      //again arguments and formal parameters do not share memory space in strict mode
-      assert.notStrictEqual(arguments[0], obj1);
-    }
-
-    threeStrictMode({}, {});
-
+  function two(x, y, z) {
+    t.equal(10, x, 'formal identifier accessible via its name');
+    t.equal(10, arguments[0], 'formal identifier accessible via arguments object and the appropriate index');
+  
+    t.equal(20, y, 'formal identifier accessible via its name');
+    t.equal(20, arguments[1], 'formal identifier accessible via arguments object and the appropriate index');
+  
+    t.notOk(z, 'formal parameters that has not been passed on function invocation are undefined');
+    t.notOk(arguments[2], 'formal parameters that has not been passed on function invocation are undefined');
+  
+    t.equal(x, arguments[0], 'formal parameter and arguments point to the same physical data');
+    t.equal(y, arguments[1], 'formal parameter and arguments point to the same physical data');
+    t.equal(z, arguments[2], 'formal parameter and arguments point to the same physical data');
+  
+    arguments[0] = 20;
+    t.equal(20, arguments[0], "that is why when we change arguments[0] we also change the parameter value");
+    t.equal(20, x, "formal parameter updated");
+  
+    z = 40;
+    t.equal(40, z, "however this sharing is not valid for formal parameters that are not passed on function execution");
+  
+    arguments[2] = 50;
+    t.equal(50, arguments[2], 'we change independently both');
+    t.equal(40, z, 'arguments and the not passed formal parameter');
+  }
+  
+  function twoStrictMode(x, y, z) {
+  
+    "use strict";
+  
+    arguments[0] = 20;
+    t.equal(20, arguments[0], "formal parameter and arguments do not point to the same physical data in strict mode");
+    t.equal(10, x, "that is why when we change arguments[0] we do not change the formal parameter value");
   }
 
   t.end();
