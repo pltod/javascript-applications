@@ -4,15 +4,15 @@ Skeleton for very fast API prototyping that works with Express and MongoDB.
 
 # How I do the prototyping
 
-1. Config DB parameters
+* Config DB parameters
 
 > Set up the DB parameters in config.json. When I work with single collection I leave default parameters.
 
-2. Start the DB
+* Start the DB
 
 > I use (my MDB tool)[https://github.com/pltod/mdb] to start clean mongo database usually in my project root directory. I just do ```mdb start``` in the console and the tool creates dbdata folder where all the data is stored.
 
-3. Write you code
+* Write you code
 
 > index.js and server.js are completely reusable
 
@@ -20,15 +20,15 @@ Skeleton for very fast API prototyping that works with Express and MongoDB.
 
 > db.js: write you db queries here
 
-4. Install and run the app
+* Install and run the app
 
 > ```npm i``` then ```npm start```
 
-5. Trace the app behaviour
+* Trace the app behaviour
 
 > **debug** module is really useful in doing this
 
-6. Test the app
+* Test the app
 
 I usually use three strategies
 
