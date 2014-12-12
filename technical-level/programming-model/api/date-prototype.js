@@ -1,4 +1,4 @@
-var debug = require('debug')('object-prototoype');
+var debug = require('debug')('date-prototoype');
 var test = require('tape');
 
 test('### getTime and valueOf ###', function(t) {
