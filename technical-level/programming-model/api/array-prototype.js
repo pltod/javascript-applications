@@ -58,3 +58,12 @@ test('### join ###', function(t) {
   t.end();
 });
 
+test('### concat ###', function(t) {
+
+  var initial = ['one', 'two', 'three'];
+  var result = initial.concat(1, 'ss', ['four', 'five'], ['six']);
+  t.deepEqual(result, ['one', 'two', 'three', 1, 'ss', 'four', 'five', 'six'], 'concat could concatenate several arrays and single values into one array');
+  
+  t.end();
+});
+
