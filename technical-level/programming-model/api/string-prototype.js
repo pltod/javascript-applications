@@ -1,7 +1,7 @@
 var debug = require('debug')('string-prototoype')
 var test = require('tape');
 
-test('### Built-in functions - split ###', function(t) {
+test('### split ###', function(t) {
   var str = 'Hello world';
   var splitted = str.split(' ');
   t.ok(splitted instanceof Array, 'split function creates Array out of String');
