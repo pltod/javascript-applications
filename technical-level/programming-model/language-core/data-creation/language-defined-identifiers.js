@@ -71,3 +71,17 @@ test('### arguments ###', function(t) {
   t.end();
 
 });
+
+test('### arguments properties ###', function f1(t) {
+
+  function f() {
+    t.equal(arguments.callee, f, 'callee refer to the current execution function');
+    t.equal(arguments.caller, undefined, 'caller property is deprecated and not guaranteed to work the same')
+  }
+  
+  f();
+  
+  t.end();
+  
+});
+
