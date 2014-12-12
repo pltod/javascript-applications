@@ -1,4 +1,4 @@
-var debug = require('debug')('classical inheritance');
+var debug = require('debug')('classical-inheritance');
 var test = require('tape');
 
 test('### Classical inheritance achieved with Function.call() and Object.create() ###', function(t) {
