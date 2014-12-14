@@ -1,0 +1,1 @@
+* why typeof Function.prototype is 'function'
