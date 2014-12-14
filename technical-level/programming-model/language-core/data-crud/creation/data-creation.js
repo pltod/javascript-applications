@@ -1,9 +1,9 @@
+var debug = require('debug')('data-creation');
 var test = require('tape');
-var log = console.log;
 
 test('### Create Data with Variable Declaration ###', function(t) {
 
-  log('########################################');
+  debug('########################################');
   t.pass('##### Definitions');
 
   t.pass('Identifier: the name used to access data');
@@ -20,7 +20,7 @@ test('### Create Data with Variable Declaration ###', function(t) {
 
 });  
 
-test('### Create Data With Functions Declaration ###', function(t) {
+test('### Create Data With Function Declaration ###', function(t) {
 
   function f1(x) {
     t.pass('Functions can be defined with Function Declaration also known as Literal form')
@@ -34,7 +34,7 @@ test('### Create Data With Functions Declaration ###', function(t) {
   
 });    
 
-test('### Create Data With Functions Expression ###', function(t) {
+test('### Create Data With Function Expression ###', function(t) {
 
   t.pass('Function Expressions involves Variable Declarations');
   
@@ -98,23 +98,36 @@ test('### Create Data With Objects ###', function(t) {
   
 });    
 
+test('### Prove that identifiers are created at EC Creation ###', function(t) {
+
+  if (true) {
+    var a = 1;
+  } 
+  else {
+    debug("Declare variables in statement scope is not a good practice");
+      
+    debug("This branch is never executed but still identifiers are created on EC creation");
+    function f() {}    
+    var b = 2;
+  }
+   
+  t.equal(1, a);
+  
+  t.equal(typeof f, 'function');
+  debug("t.notOk(b) - Works like this in Firefox due to Function Statements implementation");
+  t.equal(b, undefined);
+
+  
+  t.end();
+  
+});
+
 test('### Practices ###', function(t) {
 
   t.pass('Prefer Function Declarations instead of Expressions');
   t.pass('Give the same name of the function expression with the name of variable associated with it');
   t.pass('Prefer Object Literal notation for object creation');  
   
-  t.pass('TODO: Why these practices? Explain the cases bellow.')
-  
-  t.pass('TODO: The case with function name differing from variable name')  
-  t.pass('TODO: IE Function Expression name scope leakage')
-  t.pass('TODO: Debugging Aspect')  
-  t.pass('TODO: Firefox Function Statements')
-
-
-  t.pass('TODO: arguments identifier')  
-  t.pass('TODO: properties vs. variables')
-          
   t.end();
   
 });
