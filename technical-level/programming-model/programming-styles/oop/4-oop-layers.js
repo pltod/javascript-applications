@@ -1,6 +1,7 @@
 var test = require('tape');
 
-test('### JavaScript and OOP Principles ###', function(t) {
+test('### Four layers of OOP ###', function(t) {
+
   console.log('########################################');
 
   
@@ -49,34 +50,3 @@ test('### JavaScript and OOP Principles ###', function(t) {
   t.end();
   
 });
-
-test('### OOP Resources ###', function(t) {
-
-  t.pass('##### Books');
-  
-  t.pass('http://effectivejs.com/');
-  t.pass('https://leanpub.com/oopinjavascript');
-  t.pass('http://speakingjs.com/es5/');
-    
-  
-  
-  t.pass('##### Posts');
-
-  t.pass('http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-1-lexical-environments-common-theory/');
-  t.pass('http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-2-lexical-environments-ecmascript-implementation/');
-  t.pass('http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/');
-
-  t.pass('http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/');
-
-  t.pass('http://webreflection.blogspot.com/2010/10/javascript-coercion-demystified.html');
-
-  t.pass('http://qfox.nl/weblog/214');
-
-  t.pass('http://www.2ality.com/2014/05/oop-layers.html');
-
-  t.pass('http://www.martinrinehart.com/frontend-engineering/knowits/op/op-v4-color-preview.pdf');
-  
-  
-  t.end();
-  
-});  

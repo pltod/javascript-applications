@@ -44,14 +44,14 @@ test('### With custom constructor functions ###', function(t) {
       //Do nothing
     }
   }
-
+  
   Person.prototype.f2 = function() {
     //Do nothing
   }
-
   var p = new Person('test');
   var p1 = new Person('test1');
   t.equal(p.name, 'test', 'Object has been created with constructor function');
+  t.equal(Object.getPrototypeOf(p), Person.prototype, 'the prototype of instances are prototype property of the constructor function object');  
   t.notEqual(p.f1, p1.f1, 'each instance has copy of it');
   t.equal(p.f2, p1.f2, 'each instance could have shared methods via prototype - useful for saving memory');
 
