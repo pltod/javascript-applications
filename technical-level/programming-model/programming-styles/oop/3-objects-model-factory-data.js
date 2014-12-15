@@ -30,10 +30,11 @@ test('### Factory ###', function(t) {
 test('### How to Create Factories? ###', function(t) {
 
   debug('As we saw factories are callable objects called functions');
-
+  debug('So creating of factories is the same as creating functions');
+  
   function Factory() {}
   var f = function() {}
-
+  
   t.equal(typeof Factory, "function", '1. We can create factories with function declarations');
   t.equal(typeof f, "function", '2. We can create factories with function expressions');
   t.equal(typeof Function, 'function', '3. We can create factories with built-in factory for factories')
@@ -41,7 +42,7 @@ test('### How to Create Factories? ###', function(t) {
   debug("Be careful with the third option. Factories created in this way do not preserve the lexical scope.")
   debug("Since factories are functions we often use them just as functions not factories")
 
-  t.equal(typeof Function.prototype, 'function', 'Function.prototype is the model of Factories')
+  t.equal(typeof Function.prototype, 'function', 'Function.prototype is the model of Factory')
   t.equal(Object.prototype, Object.getPrototypeOf(Function.prototype), "The model of Function.prototype is Object.prototype")
 
   t.end();
@@ -63,6 +64,10 @@ test('### Awarness for the three objects - we can set them properties ###', func
   creatorObject.label = "creatorObjectLabel";
   creatorObject.param = "param";
   modelObject.modelParam = "param";
+
+  t.ok(FactoryObject.prototype, 'We have access to the models of the factories');
+  t.notOk(dataHolderObject1.prototype, 'We have not access to the models of the data holders');
+  t.deepEqual(Object.getPrototypeOf(dataHolderObject1), {}, 'We have not access to the models of the data holders');
 
   t.equal(modelObject.label, "modelObjectLabel", 'Our Model is object and we can set properties to it');
   t.equal(creatorObject.label, "creatorObjectLabel", 'Our Creator/Factory is object and we can set properties to it');

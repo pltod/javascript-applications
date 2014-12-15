@@ -1,7 +1,13 @@
 var debug = require('debug')('classical-inheritance');
 var test = require('tape');
 
+
 test('### Classical inheritance achieved with Function.call() and Object.create() ###', function(t) {
+
+  debug("Some of the activities are:")
+  debug("--Inheriting instance properties.");
+  debug("--Inheriting prototype properties.");
+  debug("--Ensuring that instanceof works for child and parent");
 
   debug('Define parent class Product');
   function Product(name) {
