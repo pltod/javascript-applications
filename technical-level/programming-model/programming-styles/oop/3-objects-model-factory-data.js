@@ -1,11 +1,54 @@
 var debug = require('debug')('model-factory-data');
 var test = require('tape');
 
+debug("JS - The three objects - Model (Prototype), Factory (Constructor Function), Data (Mutable - Immutable Instances)");
 
-test('### The metaphor ###', function(t) {
+test('### The Root Model ###', function(t) {
   
-  debug("Three are the involved objects");
-  debug("Constructor Function, Instance, and Prototype are Creator/Factory, Data (Holder), Model");
+  t.ok("In JS we create objects based on models called prototypes")
+  t.ok(Object.prototype, 'JS has built-in model objects - prototype. Object prototype is the object of Reference Type')
+  t.notOk(Object.getPrototypeOf(Object.prototype), "Object.prototype is the root Model")
+
+  t.end();
+  
+});
+
+test('### Factory ###', function(t) {
+
+  
+  t.ok({}, "JS allows to create objects with literal");
+  t.equal(typeof Object.create, "function", "...or with dedicated object method");
+  t.equal(typeof Object, "function", '...or with built-in factories, which are of type functions because they must be callable');
+
+  function Factory() {}
+  t.equal(typeof Factory, "function", '...or with custom factories, which are of type functions because they must be callable');  
+  
+  t.end();
+  
+});
+
+test('### How to Create Factories? ###', function(t) {
+
+  debug('As we saw factories are callable objects called functions');
+  
+  function Factory() {}
+  var f = function () {}
+  
+  t.equal(typeof Factory, "function", '1. We can create factories with function declarations');    
+  t.equal(typeof f, "function", '2. We can create factories with function expressions');      
+  t.equal(typeof Function, 'function', '3. We can create factories with built-in factory for factories')  
+
+  debug("Be careful with the third option. Factories created in this way do not preserve the lexical scope.")  
+  debug("Since factories are functions we often use them just as functions not factories")
+  
+  t.equal(typeof Function.prototype, 'function', 'Function.prototype is the model of Factories')  
+  t.equal(Object.prototype, Object.getPrototypeOf(Function.prototype), "The model of Function.prototype is Object.prototype")
+  
+  t.end();
+  
+});
+
+test('### Awarness for the three objects - we can set them properties ###', function(t) {
   
 	function FactoryObject(label){
 		this.label = label || "DefaultDataHolderLabel";
@@ -22,7 +65,7 @@ test('### The metaphor ###', function(t) {
 	modelObject.modelParam = "param";
 	
 	t.equal(modelObject.label, "modelObjectLabel", 'Our Model is object and we can set properties to it');
-	t.equal(creatorObject.label, "creatorObjectLabel", 'Our Creator is object and we can set properties to it');
+	t.equal(creatorObject.label, "creatorObjectLabel", 'Our Creator/Factory is object and we can set properties to it');
 	t.equal(dataHolderObject1.label, "DefaultDataHolderLabel", "Data holder 1 has label property");
 	t.equal(dataHolderObject2.label, "ConcreteDataHolderLabel", "Data holder 2 has label property as well because it is created with the same Creator");
 	
@@ -31,35 +74,6 @@ test('### The metaphor ###', function(t) {
 	
 	t.equal(dataHolderObject1.modelParam, "param", 'Dynamic change in the Model reflects the Data Holder');
 	t.equal(dataHolderObject2.modelParam, "param", 'Dynamic change in the Model reflects the Data Holder');
-  
-  t.end();
-});
-
-test('### Object Hierarchy And The Root Model ###', function(t) {
-  
-  debug('JS has built-in creator objects -> constructor functions')
-  t.ok(Object, 'Object is the main Creator')
-  t.ok(Function, 'Function is another Creator')  
-  t.equal(typeof Object, 'function', 'The type of Creator Object is function')
-  t.equal(typeof Function, 'function', 'The type of Creator Function is function')  
-  
-  debug('JS has built-in model objects - prototype')  
-  t.ok(Object.prototype, 'Object prototype is the object of Reference Type')
-  
-  
-  t.notOk(Object.getPrototypeOf(Object.prototype), "Object.prototype is the root Model")
-
-  t.equal(typeof Function.prototype, 'function', 'Function prototype is of object Reference Type')  
-  t.equal(Object.prototype, Object.getPrototypeOf(Function.prototype), "The model of Function.prototype is Object.prototype")  
-
-  t.end();
-});
-
-test('### constructor property ###', function(t) {
-
-  var obj = {};
-  t.ok(obj.constructor === Object.prototype.constructor, 'All objects inherit a constructor property from their prototype');
-  t.ok(obj.constructor === Object, 'All objects inherit a constructor property from their prototype');
   
   t.end();
 });
