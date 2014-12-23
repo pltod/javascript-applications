@@ -1,3 +1,10 @@
+// http://speakingjs.com/es5/ch15.html
+
+// pure function
+// Constructor (Factory)
+// method
+
+
 /**
  * 
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript
