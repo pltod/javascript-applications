@@ -17,4 +17,9 @@ module.exports = {
       return fn.apply(null, args1.concat(args2))
     }
   }
+  
+  // TODO
+  
+  // function that applies arguments one by one until the end
+  // function that is curried and delayed or not depending on the user input
 }

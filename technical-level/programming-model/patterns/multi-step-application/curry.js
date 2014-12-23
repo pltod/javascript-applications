@@ -1,6 +1,6 @@
 var debug = require('debug')('curry');
 var test = require('tape');
-var curry = require('../../../shared/util/curry');
+var curry = require('../../../../shared/util/curry');
 
 test('### Functions are actually applied ###', function(t) {
 
