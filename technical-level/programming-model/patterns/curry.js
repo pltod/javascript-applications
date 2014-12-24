@@ -1,6 +1,13 @@
 var debug = require('debug')('curry');
 var test = require('tape');
-var curry = require('../../../../shared/util/curry');
+
+function curry(fn) {
+  var args1 = Array.prototype.slice.call(arguments, 1)
+  return function(args) {
+    var args2 = Array.prototype.slice.call(arguments)
+    return fn.apply(null, args1.concat(args2))
+  }
+}
 
 test('### Functions are actually applied ###', function(t) {
 
@@ -42,6 +49,6 @@ test('### Curried util ###', function(t) {
     return what + "/" + by
   }
 
-  t.equal(curry.make(test, "feature1")("pl"), "feature1/pl", "make curry on the fly");
+  t.equal(curry(test, "feature1")("pl"), "feature1/pl", "make curry on the fly");
   t.end();
 });
