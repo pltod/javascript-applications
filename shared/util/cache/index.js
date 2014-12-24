@@ -46,6 +46,29 @@ module.exports = {
       }
     }
   },
+  
+  // curry the list with parameters - input needed for async oper / callback -> curry
+  // cache (memo) the result of async operation -> memo
+  curryMemoAsync: function(fn) {
+    var done, err, res;
+    return function() {
+      var args = slice.call(arguments);
+      args[arguments.length] = cb;
+      fn.apply(this, args);
+      return function(f) {
+        done ? f(err, res) : cb = f
+      }
+    }
+    // borrowing this callback 
+    // it is used in case the async result 
+    // is obtained before the client code provide another callback
+    // this callback just cache the result
+    function cb(e, r) {
+      done = true;
+      err = e;
+      res = r;
+    };
+  },
 
   //TODO something like curry but for nodejs cases where we could:
   // start async process with the first set of arguments

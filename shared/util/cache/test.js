@@ -76,6 +76,36 @@ test('### curry ###', function(t) {
   t.end();
 });
 
+test('### curry async ###', function(t) {
+  
+  // function that accepts callback for invoking when async operation is done
+  function e(p1, p2, callback) {
+    // simulate async
+    setTimeout(function () {
+      callback(null, p1 + p2);
+    }, 2000)
+  }
+  
+  var curryMemoAsyncE = to.curryMemoAsync(e);
+  
+  // pass params to trigger the async operation
+  // two operations in parallel in this case
+  var f1 = curryMemoAsyncE(1, 2);
+  var f2 = curryMemoAsyncE(2, 3);  
+  
+  f1(function (e, r) {
+    t.equal(r, 3, 'callback provided before async operation end');  
+  });
+  
+  // pass callback whenever is needed
+  setTimeout(function () {
+    f2(function (e, r) {
+      t.equal(r, 5, 'callback provided after async operation end');  
+      t.end();
+    })  
+  }, 3000)
+});
+
 
 /**
  * Simulate curry, thunk, and partial execution in one.
