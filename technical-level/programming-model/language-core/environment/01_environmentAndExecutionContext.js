@@ -284,22 +284,6 @@ define(["chai"], function(Chai) {
 
 
 
-	Suite.tests.push({
-		name: "Local Environment",
-		body: function() {
-            
-            //This test is simplified more related information exists in data creation and data resolution test suites
-            function local() {
-                var localVar = 1;
-                assert.equal(1, localVar);
-                
-                //localVar is part of new local environment it is not bound in the global environment
-                assert.isUndefined(GLOBAL_OBJECT.localVar);
-            }
-            
-            local();
-		}
-	});
 
 
 	return Suite;
