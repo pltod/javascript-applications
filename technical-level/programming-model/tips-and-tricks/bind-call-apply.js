@@ -55,7 +55,7 @@ test('### Creating call ###', function(t) {
 
 });
 
-test('### Creating call ###', function(t) {
+test('### Creating apply ###', function(t) {
 
   debug("this is equal to bind.call(call, apply)");  
   var apply = bind(c, a);  
