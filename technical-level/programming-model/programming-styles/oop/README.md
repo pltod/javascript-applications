@@ -1,9 +1,9 @@
-* JavaScript OOP explanation on abstract level
+# JavaScript OOP explanation on abstract level
 
 ![](https://github.com/pltod/javascript-applications/blob/master/images/js-oop.png)
 
 
-There is a little change in terminology
+Terminology used differs from the one used in the spec:
 
 > factories are actually constructor functions
 
