@@ -35,7 +35,7 @@ test('### Data holder - with Object.create(prototype) available from ES5 ###', f
 
 test('### Data holder - with custom constructor functions ###', function(t) {
 
-  debug('This data holder is with Custom Factory constructor of type function')
+  debug('This data holder is created with Custom Factory constructor of type function')
 
   function Factory(name) {
     this.name = name
@@ -53,7 +53,7 @@ test('### Data holder - with custom constructor functions ###', function(t) {
 
 test('### Data holder - manual ###', function(t) {
 
-  debug('This data holder is with Object constructor. Kind of broken hierarchy.')
+  debug('This data holder is created with Object constructor. Kind of broken hierarchy.')
 
   var model = {
     name: "MJ"
@@ -69,7 +69,7 @@ test('### Data holder - manual ###', function(t) {
   debug(Object.getPrototypeOf(obj2).name)
 
   t.deepEqual(Object.getPrototypeOf(obj), model, 'object created with specified model')
-  t.equal(obj.constructor, Object, 'The factory is Object because our prototype is of type Object')
+  t.deepEqual(obj.constructor, Object, 'The factory is Object because our prototype is of type Object')
   t.ok(obj.constructor === Factory.prototype.constructor, 'All objects inherit a constructor/factory property from their prototype/model');
   t.equal(obj.name, "MJ", 'property is set on prototype')
   Object.getPrototypeOf(obj2).name = "MJU";
