@@ -1,4 +1,4 @@
-var debug = require('debug')('lazy-function-definition');
+var debug = require('debug')('revealing-constructor-pattern');
 var test = require('tape');
 
 debug('Reference: http://domenic.me/2014/02/14/the-revealing-constructor-pattern/');
