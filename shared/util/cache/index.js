@@ -68,14 +68,5 @@ module.exports = {
       err = e;
       res = r;
     };
-  },
-
-  //TODO something like curry but for nodejs cases where we could:
-  // start async process with the first set of arguments
-  // then work on cached result with the callback
-
-  // thunk
-  delay: function(fn, delay) {
-    // TODO
   }
 }
