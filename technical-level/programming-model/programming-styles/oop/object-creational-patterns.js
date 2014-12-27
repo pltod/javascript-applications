@@ -1,4 +1,4 @@
-var debug = require('debug')('constructor-function-without-new');
+var debug = require('debug')('object-creational-patterns');
 var test = require('tape');
 
 test('### Constructor functions has problems when not calling with new ###', function(t) {

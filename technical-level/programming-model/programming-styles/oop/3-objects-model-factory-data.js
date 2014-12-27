@@ -67,7 +67,7 @@ test('### Awarness for the three objects - we can set them properties ###', func
 
   t.ok(FactoryObject.prototype, 'We have access to the models of the factories');
   t.notOk(dataHolderObject1.prototype, 'We have not access to the models of the data holders');
-  t.deepEqual(Object.getPrototypeOf(dataHolderObject1), {}, 'We have not access to the models of the data holders');
+  t.deepEqual(Object.getPrototypeOf(dataHolderObject1), modelObject, 'We have not access to the models of the data holders');
 
   t.equal(modelObject.label, "modelObjectLabel", 'Our Model is object and we can set properties to it');
   t.equal(creatorObject.label, "creatorObjectLabel", 'Our Creator/Factory is object and we can set properties to it');
@@ -82,3 +82,24 @@ test('### Awarness for the three objects - we can set them properties ###', func
 
   t.end();
 });
+
+test('### Objects defined with constructor function with new has its [[Prototype]] set to constructor function prototype ###', function(t) {
+  function User() {};
+  User.prototype.prop = "value";
+  var user = new User();
+
+  t.equal(Object.getPrototypeOf(user), User.prototype);
+  t.equal(user.prop, "value");
+  t.end();
+});
+
+test('### Object defined with object literal has its [[Prototype]] set to Object.prototype ###', function(t) {
+  var user = {
+    name: "pltod"
+  };
+  t.equal(Object.getPrototypeOf(user), Object.prototype);
+  t.end();
+});
+
+
+

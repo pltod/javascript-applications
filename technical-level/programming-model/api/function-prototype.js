@@ -43,6 +43,45 @@ test('### bind - creating shortcuts ###', function(t) {
   t.end();
 });
 
+test('### Using "bind" function to change context ###', function(t) {
+
+  var context1 = {
+    value: 1
+  },
+    context2 = {
+      value: 2
+    };
+
+  function fn() {
+    return this.value;
+  }
+  fn.prop = 5;
+
+  var fnInContext1 = fn.bind(context1),
+    fnInContext2 = fn.bind(context2);
+
+  assert.equal(1, fnInContext1());
+  assert.equal(2, fnInContext2());
+
+
+  //bind creates completely new function in memory
+  assert.notStrictEqual(fn, fnInContext1);
+  assert.notStrictEqual(fn, fnInContext2);
+
+  //that is why fn properties does not exists on the newly created fucntion objects with bind
+  assert.equal(5, fn.prop);
+  assert.isUndefined(fnInContext1.prop);
+  fn = 3;
+  assert.isNotFunction(fn);
+
+  //and when we change fn reference the created with bind functions are still working
+  assert.isFunction(fnInContext1);
+
+  t.end();
+
+});
+
+
 
 test('### call ###', function(t) {
   debug('The call() method calls a function with a given this value and arguments provided individually.');

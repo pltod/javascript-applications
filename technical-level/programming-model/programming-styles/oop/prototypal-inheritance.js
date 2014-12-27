@@ -23,3 +23,12 @@ test('### prototypal inheritance ###', function(t) {
   
   t.end();
 });
+
+test('### To check the object prototype use Object.getPrototypeOf instead of __proto__ ###', function(t) {
+  debug("__proto__ is not consistent acros environments")
+  var v = Object.create(null);
+  debug("The next statement could be false in some environments");
+  t.ok("__proto__" in v);
+  t.end();
+});
+
