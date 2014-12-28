@@ -1,4 +1,4 @@
-var debug = require('debug')('data-creation');
+var debug = require('debug')('data-creation-order');
 var test = require('tape');
 
 test('### Data Creation Order: If multiple formal parameters have the same name, the one occurring latest in the list will take precedence, even if it is undefined. ###', function(t) {
