@@ -46,7 +46,10 @@ test('### Function Creation - [[Scope]] Difference in Function Declarations and 
   This is the main (and actually the only) reason of separation of these two, at first glance the same, components.
   Source: http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-2-lexical-environments-ecmascript-implementation/#lexical-environment */
 
-
+  debug('Both VariableEnvironment and LexicalEnvironment are lexical environments');
+  debug('The difference is that LE = VE + dynamic stuff created with catch, eval and with');
+  debug('Initially LE = copy of VE');
+  
   var a = 10;
 
   // Function Declaration
