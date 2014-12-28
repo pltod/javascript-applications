@@ -1,13 +1,29 @@
-**WIP**
+# JS Environment Internals
 
-* how JS Engines works
+### Environment Types 
 
-> environment types
+* Global, Local, Dynamic
 
-> environment structure
+### Environment Structure
 
-> environment lifecycle
+* Stack with active ECs
 
-> environment storage mechanisms
+* Each EC structure is
 
-* internals about engines like V8
+> ThisBinding, Variable Environment, Lexical Environment (VE + Dynamic Environments)
+
+### Environment Lifecycle
+
+* Execution Context Creation, EC Execution
+
+* Function Creation, Function Activation/Application
+
+### Environment Storage Mechanisms
+
+* Declarative record
+
+* Object record
+
+# JS Engine Internals
+
+Internals about engines like V8 in which JS programs run
