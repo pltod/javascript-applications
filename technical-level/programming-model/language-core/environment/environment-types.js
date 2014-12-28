@@ -1,4 +1,4 @@
-var debug = require('debug')('environment');
+var debug = require('debug')('environment-type');
 var test = require('tape');
 
 debug("JS has 3 environment types for data");
@@ -49,7 +49,7 @@ test('### Local Environment ###', function(t) {
 test('### Dynamic Environment - eval statements in GE ###', function(t) {
 
   debug("JS creates dynamic environment when using eval, with and catch statements")
-
+  debug("called in GE eval leaks data into GE depending on the engine")
   t.notOk(global.GLOBAL_EVAL, "eval statements invoked in Global Environment does not leak data into Global Environment");
 
   t.end();
