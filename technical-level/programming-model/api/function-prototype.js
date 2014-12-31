@@ -47,35 +47,34 @@ test('### Using "bind" function to change context ###', function(t) {
 
   var context1 = {
     value: 1
-  },
-    context2 = {
-      value: 2
-    };
+  };
+  var context2 = {
+    value: 2
+  };
 
   function fn() {
     return this.value;
   }
   fn.prop = 5;
 
-  var fnInContext1 = fn.bind(context1),
-    fnInContext2 = fn.bind(context2);
+  var fnInContext1 = fn.bind(context1);
+  var fnInContext2 = fn.bind(context2);
 
-  assert.equal(1, fnInContext1());
-  assert.equal(2, fnInContext2());
-
+  t.equal(1, fnInContext1());
+  t.equal(2, fnInContext2());
 
   //bind creates completely new function in memory
-  assert.notStrictEqual(fn, fnInContext1);
-  assert.notStrictEqual(fn, fnInContext2);
+  t.notEqual(fn, fnInContext1);
+  t.notEqual(fn, fnInContext2);
 
   //that is why fn properties does not exists on the newly created fucntion objects with bind
-  assert.equal(5, fn.prop);
-  assert.isUndefined(fnInContext1.prop);
+  t.equal(5, fn.prop);
+  t.notOk(fnInContext1.prop);
   fn = 3;
-  assert.isNotFunction(fn);
+  t.notEqual(typeof fn, 'function');
 
   //and when we change fn reference the created with bind functions are still working
-  assert.isFunction(fnInContext1);
+  t.equal(1, fnInContext1());
 
   t.end();
 

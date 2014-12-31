@@ -9,18 +9,17 @@ test('### Binding States ###', function(t) {
   function fn() {
     x
   };
-  assert.
-  throw (fn, ReferenceError);
+  t.throws(fn, ReferenceError);
 
 
   //State 2 - 'y' identifier exists but value is not bound yet - undefined
   var y;
-  assert.isUndefined(y);
+  t.notOk(y);
 
   //State 3 - 'z' identifier exists and value is bound to it
-  var z = 0;
-  assert.isDefined(z);
-  assert.equal(0, z);
+  var z = 1;
+  t.ok(z);
+  t.equal(1, z);
 
   t.end();
 });
