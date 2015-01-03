@@ -1,6 +1,6 @@
 # Component Model
 
-![](https://github.com/pltod/javascript-applications/blob/master/images/components-packaging-delivery.png)
+![](https://github.com/pltod/javascript-applications/blob/master/images/components-packaging-delivering.png)
 
 
 * Consider 
