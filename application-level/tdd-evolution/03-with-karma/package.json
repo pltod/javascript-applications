@@ -1,0 +1,17 @@
+{
+  "name": "javascript-playbook-2",
+  "version": "0.0.1",
+  "description": "Test infrastructure for testing JavaScript code with Karma",
+  "author": "Plamen Todorov <pl.todorov@gmail.com>",
+  "engines": {
+    "node": "~0.10.19"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "karma-mocha": "~0.1.1",
+    "karma-chai-plugins": "~0.1.3",
+	"karma-requirejs": "*",
+	"karma-chrome-launcher": "*"
+  },
+  "repository": {}
+}

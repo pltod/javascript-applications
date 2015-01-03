@@ -1,0 +1,9 @@
+{
+	"author": "Plamen Todorov <pl.todorov@gmail.com>",
+	"name": "JSProjectArchitecture",
+	"description": "Sample Architecture for JS Based Web Applications",
+	"version": "1.0.0",
+	"dependencies": {
+		"requirejs": "~2.0.4"
+	}
+}

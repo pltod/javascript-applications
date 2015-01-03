@@ -1,0 +1,16 @@
+{
+	"author": "Plamen Todorov <pl.todorov@gmail.com>",
+	"name": "javascript-playbook",
+	"description": "Sample Architecture for JS Based Web Applications with possibility to run Mocha test inside the browser",
+	"version": "1.0.0",
+	"engines": {
+		"node": "~0.8.10"
+	},
+	"dependencies": {
+		"architect": "~0.1.7",
+		"express": "~3.0.3"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.0"
+	}
+}

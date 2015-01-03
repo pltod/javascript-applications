@@ -1,0 +1,9 @@
+{
+    "name": "ExpressHttpServer",
+    "version": "0.0.1",
+    "main": "server.js",
+
+    "plugin": {
+        "provides": ["httpServer"]
+    }
+}
