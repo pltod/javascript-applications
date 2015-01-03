@@ -1,0 +1,11 @@
+{
+  "name": "hello-world",
+  "description": "hello world test app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+  	"architect": "0.1.7",
+    "express": "3.0.3",
+    "grunt": "0.3.17"
+  }
+}

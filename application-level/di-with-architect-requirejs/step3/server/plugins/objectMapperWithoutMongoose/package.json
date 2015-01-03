@@ -1,0 +1,10 @@
+{
+    "name": "objectMapper",
+    "version": "0.0.1",
+    "main": "objectMapper.js",
+    "private": true,
+
+    "plugin": {
+        "provides": ["objectMapper"]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "lazyLoadPlugin",
+    "version": "0.0.1",
+    "main": "lazyLoadPlugin.js",
+    "private": true,
+
+    "plugin": {
+        "provides": ["lazyLoadPlugin"]
+    }
+}

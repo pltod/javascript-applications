@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "author": "pltod <pl.todorov@gmail.com>",
+    "name": "server-side-test",
+    "description": "test",
+    "version": "0.0.1",
+    "repository": {
+        "url": ""
+    },
+    "engines": {
+        "node": "~0.6.11"
+    },
+    "dependencies": {
+        "architect": "~0.1.0",    
+        "mongoose": "3.4.0"
+    },
+    "devDependencies": {},
+    "optionalDependencies": {}
+}
