@@ -40,4 +40,4 @@ Sample test output:
 
 MIT
 
-[![](https://github.com/pltod/javascript-applications/blob/master/images/cc.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/) for text and diagrams.
+[![](https://github.com/pltod/javascript-applications/blob/master/images/cc.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/) for text and diagrams
