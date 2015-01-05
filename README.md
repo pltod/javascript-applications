@@ -2,7 +2,6 @@
 
 # Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [What is inside this repo?](#what-is-inside-this-repo)
 - [Scaffolding Explanation](#scaffolding-explanation)
 - [Shared Folder Info](#shared-folder-info)
