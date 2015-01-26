@@ -1,6 +1,6 @@
 
 
-test('### Autoboxing - creating Wrapper type autopmatically to provide methods to primitives. ###', function(t) {
+test('### Autoboxing - creating Wrapper type automatically to provide methods to primitives. ###', function(t) {
   var name = "name";
   assert.equal('n', name.charAt(0));
 
