@@ -4,8 +4,8 @@ var test = require('tape');
 test('### prototypal inheritance ###', function(t) {
   
   debug('Prototypal inheritance is done with Object.create method');
-  debug('Before its existince there were shims');
-  
+  debug('Before its existince there were shims like this one:');
+
   function object(o) {
     function F() {}
     F.prototype = o;
@@ -18,7 +18,8 @@ test('### prototypal inheritance ###', function(t) {
   
   var child = object(model);
   
-  t.equal(child.prototype, model, 'model become the prototype for child')
+  t.equal(Object.getPrototypeOf(child), model, 'model become the prototype for child')
+  t.equal(child.constructor, Object, 'the constructor of model in this case built-in Object is constructor of the instance');
   t.equal('test', child.name, 'name property has been inherited from the prototype')
   
   t.end();
