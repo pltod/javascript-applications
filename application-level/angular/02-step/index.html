@@ -1,0 +1,31 @@
+<!doctype html>
+
+<!-- Give angular app a name - We could have many module -->
+<html ng-app="MyModule">
+<meta charset='utf-8'>
+
+<head>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.js"></script>  
+  <script type="text/javascript" src="main.js"></script>  
+</head>
+
+<body ng-controller="MainCtrl">
+  
+  <div ng-init="name='pltod'">
+    <!-- Model displayed via template-->
+    {{name}}
+    
+    <!-- Model feed from inside the conroller and displayed via template-->
+    {{name2}}
+  </div>  
+  
+  <!-- Model Bound to UI element -->  
+  <input type=text ng-model="name"/>
+  
+  <!-- Iterate over collection model-->
+  <ul ng-repeat="item in items">
+    <li>{{item.name}}</li>
+  </ul>
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js"></script>-->
+</body>
+</html>

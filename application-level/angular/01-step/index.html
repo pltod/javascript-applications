@@ -1,0 +1,24 @@
+<!doctype html>
+
+<!-- Trigger Angular -->
+<html ng-app>
+<meta charset='utf-8'>
+
+<head>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.js"></script>  
+</head>
+
+<body>
+  
+  <!-- Feed data into model -->
+  <div ng-init="name='pltod'">
+    
+    <!-- Model displayed via template-->
+    {{name}}
+  </div>  
+  
+  <!-- Model Bound to UI element -->  
+  <input type=text ng-model="name"/>
+
+</body>
+</html>
