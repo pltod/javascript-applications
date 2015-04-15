@@ -1,0 +1,14 @@
+[  
+    {  
+      "id":"test",
+      "name":"name1",
+      "properties": {
+          "prop1": {
+              
+          },
+          "prop2": {
+              
+          }
+      }
+    }
+]
