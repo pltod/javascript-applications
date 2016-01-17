@@ -82,3 +82,58 @@ test('### RE with String.search ###', function(t) {
   t.equal(5, str.search(regexp), 'search will give us the index of the first found item');
   t.end();
 });
+
+test('### Any symbol followed by a pattern - . meta character ###', function(t) {
+  var str = "Matching patterns in a string";
+  var regexp = /.in/g;
+  t.deepEqual(['hin', ' in', 'rin'], str.match(regexp), 'we get everything before the pattern');
+  t.end();
+});
+
+test('### . meta character and new line character ###', function(t) {
+  var str = "Matching patterns \nin a string";
+  var regexp = /.in/g;
+  t.deepEqual(['hin', 'rin'], str.match(regexp), '. meta character does not match the new line symbol');
+  t.end();
+});
+
+test('### . meta characters must be escaped to be found ###', function(t) {
+  var str = "Matching patterns in a string.";
+  var regexp = /\./;
+  t.ok(regexp.test(str), '...and we have found a meta character');
+  t.end();
+});
+
+test('### Using quantifiers ###', function(t) {
+  var str = "aaaaaaaaaa";
+  var regexp = /a{5}/g;
+  var regexp1 = /a{5,}/g;
+  var regexp2 = /a{5,9}/g;
+  t.equal(5, regexp.exec(str)[0].length, 'finds exact number of occurences');
+  t.equal(10, regexp1.exec(str)[0].length, 'finds at least the specified number of occurences');
+  t.equal(9, regexp2.exec(str)[0].length, 'finds min and max number of occurences');
+  t.end();
+});
+
+test('### Using quantifiers - + = {1,} ###', function(t) {
+  var str = "aaaaaaaaaa";
+  var regexp = /a+/g;
+  t.equal(10, regexp.exec(str)[0].length, '+ sign is 1 to infinity');
+  t.end();
+});
+
+test('### Using quantifiers - * = {0,} ###', function(t) {
+  var str = "aaaaaaaaaa";
+  var regexp = /b*/g;
+  t.equal("", regexp.exec(str)[0], 'returns empty string when optional but missing');
+  t.end();
+});
+
+test('### Using quantifiers - ? = {0,1} ###', function(t) {
+  var str = "aaaaaaaaaa";
+  var regexp = /a?/g;
+  var regexp1 = /b?/g;
+  t.equal(1, regexp.exec(str)[0].length, 'returns string with length 1 when found');
+  t.equal("", regexp1.exec(str)[0], 'returns empty string when missing');
+  t.end();
+});
