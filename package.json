@@ -14,10 +14,8 @@
     "tape": "^3.0.3"
   },
   "scripts": {
-    "test-modules": "node application-level/nodejs-modules/test | colortape",
-    "test-data-creation": "node technical-level/programming-model/language-core/data-creation/data-creation | colortape",
+    "test-modules": "node technical-level/component-model/nodejs-modules | colortape",
     "test-generators": "node --harmony technical-level/asynchrony-model/control-flow-patterns/generators/generators | colortape",
-    "test-mongo": "node --harmony application-level/mongo/test | colortape",
     "test-lazy-func-def": "DEBUG=* node technical-level/programming-model/patterns/lazy-function-definition | colortape",
     "test-revealing-const": "DEBUG=* node technical-level/programming-model/patterns/revealing-constructor-pattern | colortape"
   },
