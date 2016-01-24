@@ -1,7 +1,10 @@
 [  
     {  
-      "id":"test",
-      "name":"name1",
+      "id":"Step1",
+      "label": "General Information",
+      "dataType": "object",
+      "uiType": "panel",
+      "style": "css1",
       "properties": {
           "prop1": {
               
