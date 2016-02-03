@@ -1,7 +1,7 @@
 {
-  "name": "client-side-react",
+  "name": "client-side-react-styles",
   "version": "1.0.0",
-  "description": "Client side app with React View Layer",
+  "description": "Client side app with React View Layer and Styles",
   "scripts": {
     "build-dev": "watchify app/boot.js -o public/build.js --debug --verbose",
     "build-prod": "browserify app/boot.js | uglifyjs > public/build.min.js"
@@ -9,16 +9,20 @@
   "keywords": [
     "client-side",
     "react",
-    "browserify"
+    "browserify",
+    "normalize",
+    "less"
   ],
   "author": "@pltod",
   "license": "MIT",
   "dependencies": {
+    "normalize.css": "^3.0.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   },
   "browserify": {
     "transform": [
+      "node-lessify",
       [
         "babelify",
         {
@@ -35,6 +39,7 @@
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "node-lessify": "^0.1.1",
     "uglifyjs": "^2.4.10",
     "watchify": "^3.7.0"
   }
