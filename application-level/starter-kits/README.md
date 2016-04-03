@@ -28,7 +28,7 @@ Folder: client-side-react-styles
 
 React / Browserify / Babel / normalize
 
-* previous plus css/less style support on component level
+* the same as previous plus css/less style support on component level
 
 ## Client-server
 

@@ -7,11 +7,16 @@
     "handlebars": "^2.0.0",
     "hapi": "^8.1.0",
     "mongodb": "^2.0.3",
-    "readable-stream": "^1.0.33"
+    "readable-stream": "^1.0.33",
+    "moment": "^2.8.3",
+    "node-persist": "0.0.2",
+    "node-uuid": "^1.4.1",
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
     "colortape": "0.0.4",
-    "tape": "^3.0.3"
+    "tape": "^3.0.3",
+    "debug": "^2.0.0"    
   },
   "scripts": {
     "test-modules": "node technical-level/component-model/nodejs-modules | colortape",

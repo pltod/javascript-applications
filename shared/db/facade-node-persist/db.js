@@ -1,24 +1,24 @@
 var debug = require('debug')('db-test');
 var storage = require('node-persist');
-var dbUtils = require("../utils");
+var dbUtils = require("./utils");
 var _ = require('underscore');
 
 
 
 module.exports = function (collections) {
   storage.initSync();
-  
+
   // init empty
   _.each(collections, function (collection) {
     if (!storage.getItem(collection)) {
-      storage.setItem(collection, []);  
+      storage.setItem(collection, []);
     }
   })
-  
+
   return {
     init: init,
     insertMany: insertMany,
-    insertOne: insertOne,  
+    insertOne: insertOne,
     findAll: findAll,
     rmAll: rmAll,
     rmOne: rmOne,
@@ -81,7 +81,7 @@ function rmOne(collection, uid) {
 
 function tagItem(item) {
   item.uid = dbUtils.uid();
-  
+
   // TODO This is application specific
   item.confirmed = false;
 }
